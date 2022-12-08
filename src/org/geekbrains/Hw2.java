@@ -1,21 +1,20 @@
 package org.geekbrains;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class Hw2 {
-    public List<Integer> RemoveVal(List<Integer> srcList, boolean delOdd){ //deOdd: true - нечетные false - четные
-        List<Integer> dstList = null;
-        List<Integer> tmpList = null;
+    public ArrayList<ArrayList<Integer>> removeVal(ArrayList<Integer> srcList) {
+        ArrayList<ArrayList<Integer>> dstList = new ArrayList<>();
+        ArrayList<Integer> tmpList = new ArrayList<>();
 
-        for (Integer val : srcList)
-            if (val%2 ==0){
+        for (Integer val : srcList) {
+            if (val % 2 == 0) {
                 tmpList.add(val);
             }
-        if (delOdd){
-
         }
-
+        dstList.add(tmpList);           // Четные
+        srcList.removeAll(tmpList);
+        dstList.add(srcList);           // Нечетные
         return dstList;
     }
-
 }
